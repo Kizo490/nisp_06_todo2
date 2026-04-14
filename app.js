@@ -1,24 +1,38 @@
-// Pobranie elementów z HTML
 const input = document.getElementById("task-input");
 const button = document.getElementById("add-task-btn");
 const taskList = document.getElementById("task-list");
 
-// Obsługa kliknięcia przycisku
 button.addEventListener("click", function () {
     const taskText = input.value.trim();
 
-    // Sprawdzenie czy coś wpisano
     if (taskText === "") {
         return;
     }
 
-    // Tworzenie nowego elementu listy
+    // Tworzenie elementów
     const li = document.createElement("li");
-    li.textContent = taskText;
+    const checkbox = document.createElement("input");
+    const span = document.createElement("span");
 
-    // Dodanie do listy
+    checkbox.type = "checkbox";
+    span.textContent = taskText;
+
+    // Styl przekreślenia po zaznaczeniu
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            span.style.textDecoration = "line-through";
+            span.style.color = "gray";
+        } else {
+            span.style.textDecoration = "none";
+            span.style.color = "black";
+        }
+    });
+
+    // Dodanie elementów do li
+    li.appendChild(checkbox);
+    li.appendChild(span);
+
     taskList.appendChild(li);
 
-    // Czyszczenie inputa
     input.value = "";
 });
