@@ -1,0 +1,86 @@
+/* Reset podstawowy */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tło i font */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Główny kontener */
+body > * {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+}
+
+/* Nagłówek */
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input */
+#task-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+#task-input:focus {
+    border-color: #74ebd5;
+    outline: none;
+}
+
+/* Przycisk */
+#add-task-btn {
+    width: 100%;
+    padding: 10px;
+    background: #74ebd5;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-task-btn:hover {
+    background: #5fd3bc;
+}
+
+/* Lista */
+#task-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* Element listy */
+#task-list li {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    text-align: left;
+    transition: 0.2s;
+}
+
+/* Hover na zadaniu */
+#task-list li:hover {
+    background: #e0f7fa;
+}
